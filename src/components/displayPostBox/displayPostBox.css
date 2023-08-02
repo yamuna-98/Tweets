@@ -1,0 +1,16 @@
+.container {
+  margin-top: 50px;
+}
+.post-container {
+  padding: 10px 250px;
+}
+.send_icon {
+  position: relative;
+  top: -30px;
+  right: -350px;
+}
+.cancel {
+  position: relative;
+  top: -30px;
+  right: -360px;
+}
