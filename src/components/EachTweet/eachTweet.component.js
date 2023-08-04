@@ -1,4 +1,4 @@
-import "./eachTweet.style.css";
+import "./eachTweet.style.scss";
 
 const EachTweet = ({ tweet }) => {
   console.log(tweet);

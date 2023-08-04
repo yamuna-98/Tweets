@@ -11,12 +11,19 @@ function App() {
   const [content, setContent] = useState([]);
   const [displayComments, setDisplayComments] = useState([]);
   const [selectedPostId, setSelectedPostId] = useState(null);
+  const [disabled, setDisabled] = useState(true);
 
   const displayPost = () => {
     setNewPost(true);
   };
   const handleMessage = (e) => {
     setTweets(e.target.value);
+    if(disabled && e.target.value !== '') {
+      setDisabled(false);
+    }
+    if(e.target.value === '') {
+      setDisabled(true);
+    }
   };
   const handleClick = () => {
     if (tweets != "") {
@@ -58,6 +65,7 @@ function App() {
             handleMessage={handleMessage}
             handleClick={handleClick}
             handleClearClick={handleClearClick}
+            disabled={disabled}
           />
         )}
 

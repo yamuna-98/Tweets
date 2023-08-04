@@ -1,5 +1,5 @@
 import EachTweet from "../EachTweet/eachTweet.component";
-import "./tweetsList.style.css";
+import "./tweetsList.style.scss";
 
 const TweetsList = ({ newPost, tweetsData }) => {
   return (

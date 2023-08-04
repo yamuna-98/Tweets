@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
 }
+
 textarea {
   padding: 30px;
   background: #efebeb;
@@ -31,20 +32,36 @@ textarea {
   color: #020000;
   font-size: 16px;
 }
-.tweet_icon {
+
+@mixin common_tweet_icon_styles {
   align-self: flex-end;
   text-decoration: none;
   display: inline-block;
   color: #fff;
-  background: #1da1f2;
   padding: 9px 18px;
   border-radius: 50px;
   margin: 16px;
   transition: all 400ms ease-in-out;
+  border: none;
+}
+
+.tweet_icon {
+  @include common_tweet_icon_styles();
+  background: #1da1f2;
 }
 .tweet_icon:hover {
   cursor: pointer;
 }
+
+.disable_tweet_icon {
+  @include common_tweet_icon_styles();
+  background: #7d8386;
+}
+
+.disable_tweet_icon:hover {
+  cursor: not-allowed;
+}
+
 .close_icon {
   position: absolute;
   top: 10px;
