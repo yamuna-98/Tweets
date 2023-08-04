@@ -18,10 +18,10 @@ function App() {
   };
   const handleMessage = (e) => {
     setTweets(e.target.value);
-    if(disabled && e.target.value !== '') {
+    if (disabled && e.target.value !== "") {
       setDisabled(false);
     }
-    if(e.target.value === '') {
+    if (e.target.value === "") {
       setDisabled(true);
     }
   };

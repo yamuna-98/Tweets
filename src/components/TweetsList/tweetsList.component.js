@@ -1,7 +1,7 @@
 import EachTweet from "../EachTweet/eachTweet.component";
 import "./tweetsList.style.scss";
 
-const TweetsList = ({ newPost, tweetsData }) => {
+const TweetsList = ({ tweetsData }) => {
   return (
     <div className="container">
       {tweetsData.map((tweet, index) => {

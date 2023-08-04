@@ -4,8 +4,10 @@ const EachTweet = ({ tweet }) => {
   console.log(tweet);
   return (
     <div className="tweet-container">
-      <p>{tweet.postDescription}</p>
-      <hr />
+      <span className="tweet-description">{tweet.postDescription}</span>
+
+      {/* <p className="tweet-description">{tweet.postDescription}</p> */}
+      {/* <hr /> */}
     </div>
   );
 };

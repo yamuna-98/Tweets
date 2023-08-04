@@ -6,15 +6,10 @@
   font-family: sans-serif;
 }
 
-.tweetBoxContainer {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-}
 .post-container {
   margin: auto;
   width: 600px;
-  background: #efebeb;
+  background: #f8f8f8;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -23,7 +18,7 @@
 
 textarea {
   padding: 30px;
-  background: #efebeb;
+  background: #f8f8f8;
   width: 100%;
   height: 200px;
   border: none;
