@@ -12,8 +12,7 @@ function App() {
   const [displayComments, setDisplayComments] = useState([]);
   const [selectedPostId, setSelectedPostId] = useState(null);
   const [disabled, setDisabled] = useState(true);
-  const [disableCommentBox, setDisableCommentBox]  = useState(true);
-
+  // const [disableCommentBox, setDisableCommentBox] = useState(true);
 
   const displayPost = () => {
     setNewPost(true);
@@ -39,7 +38,6 @@ function App() {
     // }
   };
 
-
   const checkDisableAndSetState = (val) => {
     if (disabled && val !== "") {
       setDisabled(false);
@@ -47,7 +45,7 @@ function App() {
     if (val === "") {
       setDisabled(true);
     }
-  }
+  };
   const handleClick = () => {
     if (tweets != "") {
       setNewPost(false);
@@ -63,9 +61,8 @@ function App() {
   const handleClearClick = () => {
     setNewPost(false);
   };
-  const handleComments = (postId) => {
-    setCommentsContainer(true);
-    setSelectedPostId(postId);
+  const handleComments = (index) => {
+    setSelectedPostId(index);
   };
   const handleClearComment = () => {
     setCommentsContainer(false);
@@ -76,9 +73,9 @@ function App() {
       setDisplayComments([[...displayComments, tweets]]);
     }
   };
-  const showCommentBox = () => {
-    setDisableCommentBox(false);
-  }
+  // const showCommentBox = () => {
+  //   setDisableCommentBox(false);
+  // };
   return (
     <div className="App">
       <header className="create-icon">
@@ -104,9 +101,9 @@ function App() {
             handleMessage={handleMessage}
             handleClearComment={handleClearComment}
             displayCommentMsgs={displayCommentMsgs}
-            showCommentBox={showCommentBox}
+            // showCommentBox={showCommentBox}
             onCommentChange={onCommentChange}
-            disableCommentBox={disableCommentBox}
+            // disableCommentBox={disableCommentBox}
             selectedPostId={selectedPostId}
             displayComments={displayComments}
             disabled={disabled}

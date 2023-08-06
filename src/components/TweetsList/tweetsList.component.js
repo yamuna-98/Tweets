@@ -1,12 +1,28 @@
 import EachTweet from "../EachTweet/eachTweet.component";
 import "./tweetsList.style.scss";
 
-const TweetsList = ({ tweetsData, showCommentBox, disableCommentBox, disabled, onCommentChange }) => {
+const TweetsList = ({
+  tweetsData,
+  // showCommentBox,
+  handleComments,
+  selectedPostId,
+  // disableCommentBox,
+  disabled,
+  onCommentChange,
+}) => {
   return (
     <div className="container">
       {tweetsData.map((tweet, index) => {
-        return <EachTweet tweet={tweet} showCommentBox={showCommentBox} disableCommentBox={disableCommentBox} disableCommentPostButton={disabled} onCommentChange={onCommentChange} 
-        key={index} />;
+        return (
+          <EachTweet
+            tweet={tweet}
+            showCommentBox={() => handleComments(index)}
+            disableCommentBox={selectedPostId !== index}
+            disableCommentPostButton={disabled}
+            onCommentChange={onCommentChange}
+            key={index}
+          />
+        );
       })}
     </div>
   );

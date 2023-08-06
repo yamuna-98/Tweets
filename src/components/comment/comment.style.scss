@@ -1,59 +1,62 @@
 .comment-box-container {
-    display: flex;
-    border-radius: 25px;
-    background-color: #f5f5f5;
-    margin-left: 10px;
-    margin-right: 10px;
+  display: flex;
+  border-radius: 25px;
+  background-color: #f5f5f5;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: hidden;
 }
 
 .user-comment {
-    border: none;
-    background-color: transparent;
-    flex-grow: 1;
-    font-size: 14px;    
-    max-height: 30px;
-    border-radius: 20px;
-    padding: 20px;
+  border: none;
+  background-color: transparent;
+  flex-grow: 1;
+  font-size: 14px;
+  max-height: 25px;
+  border-radius: 20px;
+  padding: 20px;
+  margin-right: -120px;
+  overflow-y: scroll;
 }
 
 .post_comment {
-    align-self: flex-end;
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    padding: 9px 18px;
-    border-radius: 50px;
-    margin: 16px;
-    transition: all 400ms ease-in-out;
-    border: none;
-    background: #1da1f2;
+  align-self: flex-end;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 50px;
+  margin: 16px;
+  transition: all 400ms ease-in-out;
+  border: none;
+  background: #1da1f2;
 }
 
 @mixin common_post_comment_styles {
-    align-self: flex-end;
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    padding: 9px 18px;
-    border-radius: 50px;
-    margin: 16px;
-    transition: all 400ms ease-in-out;
-    border: none;
-  }
-  
-  .post_comment {
-    @include common_post_comment_styles();
-    background: #1da1f2;
-  }
-  .post_comment:hover {
-    cursor: pointer;
-  }
-  
-  .disable_post_comment {
-    @include common_post_comment_styles();
-    background: #7d8386;
-  }
-  
-  .disable_post_comment:hover {
-    cursor: not-allowed;
-  }
+  align-self: flex-end;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 50px;
+  margin: 16px;
+  transition: all 400ms ease-in-out;
+  border: none;
+}
+
+.post_comment {
+  @include common_post_comment_styles();
+  background: #1da1f2;
+}
+.post_comment:hover {
+  cursor: pointer;
+}
+
+.disable_post_comment {
+  @include common_post_comment_styles();
+  background: #7d8386;
+}
+
+.disable_post_comment:hover {
+  cursor: not-allowed;
+}
