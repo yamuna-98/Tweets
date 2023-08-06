@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(235, 230, 230);
+  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 code {

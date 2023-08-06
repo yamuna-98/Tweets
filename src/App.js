@@ -12,22 +12,46 @@ function App() {
   const [displayComments, setDisplayComments] = useState([]);
   const [selectedPostId, setSelectedPostId] = useState(null);
   const [disabled, setDisabled] = useState(true);
+  const [disableCommentBox, setDisableCommentBox]  = useState(true);
+
 
   const displayPost = () => {
     setNewPost(true);
   };
   const handleMessage = (e) => {
     setTweets(e.target.value);
-    if (disabled && e.target.value !== "") {
+    checkDisableAndSetState(e.target.value);
+    // if (disabled && e.target.value !== "") {
+    //   setDisabled(false);
+    // }
+    // if (e.target.value === "") {
+    //   setDisabled(true);
+    // }
+  };
+
+  const onCommentChange = (e) => {
+    checkDisableAndSetState(e.target.value);
+    // if (disabled && e.target.value !== "") {
+    //   setDisabled(false);
+    // }
+    // if (e.target.value === "") {
+    //   setDisabled(true);
+    // }
+  };
+
+
+  const checkDisableAndSetState = (val) => {
+    if (disabled && val !== "") {
       setDisabled(false);
     }
-    if (e.target.value === "") {
+    if (val === "") {
       setDisabled(true);
     }
-  };
+  }
   const handleClick = () => {
     if (tweets != "") {
       setNewPost(false);
+      setDisabled(true);
       const post = {
         id: content.length,
         postDescription: tweets,
@@ -52,6 +76,9 @@ function App() {
       setDisplayComments([[...displayComments, tweets]]);
     }
   };
+  const showCommentBox = () => {
+    setDisableCommentBox(false);
+  }
   return (
     <div className="App">
       <header className="create-icon">
@@ -77,8 +104,12 @@ function App() {
             handleMessage={handleMessage}
             handleClearComment={handleClearComment}
             displayCommentMsgs={displayCommentMsgs}
+            showCommentBox={showCommentBox}
+            onCommentChange={onCommentChange}
+            disableCommentBox={disableCommentBox}
             selectedPostId={selectedPostId}
             displayComments={displayComments}
+            disabled={disabled}
           />
         )}
       </header>
