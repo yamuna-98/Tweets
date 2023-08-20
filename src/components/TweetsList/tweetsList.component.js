@@ -3,12 +3,15 @@ import "./tweetsList.style.scss";
 
 const TweetsList = ({
   tweetsData,
-  // showCommentBox,
-  handleComments,
-  selectedPostId,
-  // disableCommentBox,
+  showCommentBox,
+  // handleComments,
+  // selectedPostId,
+  disableCommentBox,
   disabled,
   onCommentChange,
+  selectedCommentId,
+  onHandleComment,
+  commentsMsg,
 }) => {
   return (
     <div className="container">
@@ -16,11 +19,17 @@ const TweetsList = ({
         return (
           <EachTweet
             tweet={tweet}
-            showCommentBox={() => handleComments(index)}
-            disableCommentBox={selectedPostId !== index}
+            showCommentBox={showCommentBox}
+            disableCommentBox={disableCommentBox}
             disableCommentPostButton={disabled}
             onCommentChange={onCommentChange}
+            commentsMsg={commentsMsg}
+            tweetIdx={index}
+            selectedCommentId={selectedCommentId}
             key={index}
+            onHandleComment={(selectedCommentId) =>
+              onHandleComment(selectedCommentId)
+            }
           />
         );
       })}
@@ -29,28 +38,3 @@ const TweetsList = ({
 };
 
 export default TweetsList;
-
-// {selectedPostId === index && commentsContainer && (
-//   <div className="animate__animated animate__slideInDown post-container">
-//     <Textarea
-//       name="Solid"
-//       placeholder="Type in here…"
-//       variant="soft"
-//       onChange={handleMessage}
-//     />
-//     <SendIcon
-//       className="send_icon"
-//       onClick={displayCommentMsgs}
-//     ></SendIcon>
-//     <ClearOutlinedIcon
-//       className="cancel"
-//       onClick={handleClearComment}
-//     />
-//   </div>
-// )}
-{
-  /* <ModeCommentOutlinedIcon
-                className="comment-box"
-                onClick={() => handleComments(index)}
-              /> */
-}

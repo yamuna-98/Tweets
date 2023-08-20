@@ -10,6 +10,7 @@ const DisplayTweetBox = ({
   return (
     <div className="animate__animated animate__slideInDown post-container">
       <textarea
+        className="displaytweet-container"
         onChange={handleMessage}
         placeholder="What's happening..."
         autoFocus

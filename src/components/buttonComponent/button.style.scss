@@ -1,0 +1,18 @@
+.btn-container {
+  display: flex;
+  margin-top: 10px;
+}
+.btn {
+  padding: 10px 80px;
+  border: 0.2px solid rgb(164, 161, 161);
+  border-radius: 22px;
+  font-weight: 500;
+  font-family: "Google Sans", arial, sans-serif;
+  transition: border-color 0.3s ease;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(230, 232, 244);
+  border-color: rgb(198, 213, 234);
+  transform: scale(1.01);
+}
