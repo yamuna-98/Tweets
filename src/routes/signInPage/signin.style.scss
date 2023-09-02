@@ -1,0 +1,62 @@
+.signin-page {
+  display: flex;
+  justify-content: space-between;
+}
+.quote {
+  display: inline-block;
+  margin-top: 100px;
+  padding-right: 30px;
+  font-family: TwitterChirpExtendedHeavy, Verdana, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: black;
+  font-weight: 900;
+  font-size: 47px;
+}
+.blur {
+  filter: blur(5px);
+}
+.invitation {
+  display: block;
+  text-align: justify;
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: 900;
+  padding-top: 45px;
+  font-family: TwitterChirpExtendedHeavy, Verdana, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.line-container {
+  text-align: justify;
+}
+.line {
+  display: inline-block;
+  border: 0.2px solid rgb(226, 223, 223);
+  width: 130px;
+}
+.or-text {
+  padding: 0 9px;
+  color: rgb(69, 69, 69);
+}
+.rules {
+  margin-top: 10px;
+  text-align: justify;
+  font-size: 11px;
+  line-height: 12px;
+  width: 300px;
+  font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+.links {
+  text-decoration: none;
+  color: rgb(29, 155, 240);
+}
+.links:hover {
+  border-bottom: 1.5px solid rgb(29, 155, 240);
+}
+.qstn {
+  display: block;
+  font-weight: 600;
+  margin-top: 80px;
+  text-align: justify;
+}
