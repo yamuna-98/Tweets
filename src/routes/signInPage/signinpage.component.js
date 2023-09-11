@@ -39,7 +39,6 @@ const SignInPage = () => {
     setModalShow(!modalShown);
   };
 
-  // ${showCreateAccountCard ? "blur" : ""}`
   return (
     <div className={`signin-page`}>
       <div>

@@ -4,10 +4,10 @@ const DisplayComments = ({ comments }) => {
   console.log({ comments });
   return (
     <div className="comments-container">
-      {comments.map((comment, index) => {
+      {comments.map((eachComment, index) => {
         return (
           <div className="each-comment" key={index}>
-            <span>{comment}</span>
+            <span>{eachComment.comment}</span>
           </div>
         );
       })}

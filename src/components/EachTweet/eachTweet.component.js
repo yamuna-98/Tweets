@@ -2,18 +2,19 @@ import "./eachTweet.style.scss";
 import { BiCommentDetail } from "react-icons/bi";
 import Comment from "../comment/comment.component";
 import DisplayComments from "../displayComments/displayComments.component";
+import { useState } from "react";
 
 const EachTweet = ({
   tweet,
-  showCommentBox,
-  disableCommentBox,
-  onCommentChange,
-  disableCommentPostButton,
-  tweetIdx,
-  selectedCommentId,
   onHandleComment,
-  commentsMsg,
 }) => {
+
+  const [disableCommentBox, setDisableCommentBox] = useState(true);
+
+  const showCommentBox = () => {
+    setDisableCommentBox(false);
+  };
+
   return (
     <div className="tweet-container">
       <div className="tweet-description">
@@ -28,14 +29,8 @@ const EachTweet = ({
       </div>
       {!disableCommentBox && (
         <Comment
-          tweetIdx={tweetIdx}
-          commentsMsg={commentsMsg}
-          selectedCommentId={selectedCommentId}
-          onCommentChange={onCommentChange}
-          disableCommentPostButton={disableCommentPostButton}
-          onHandleComment={(selectedCommentId) =>
-            onHandleComment(selectedCommentId)
-          }
+          tweetId={tweet.id}
+          onHandleComment={onHandleComment}
         />
       )}
       {!disableCommentBox && tweet.comments.length > 0 && (
